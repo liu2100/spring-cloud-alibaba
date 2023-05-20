@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>common</module>
         <module>order</module>
         <module>product</module>
     </modules>
@@ -30,6 +31,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- 项目公共MODULE -->
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!-- Spring Boot版本管理 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>

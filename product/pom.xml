@@ -12,9 +12,10 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- 项目公共MODULE -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.example</groupId>
+            <artifactId>common</artifactId>
         </dependency>
     </dependencies>
 
