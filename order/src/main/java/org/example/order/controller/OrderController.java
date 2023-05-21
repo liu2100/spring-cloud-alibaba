@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class OrderController {
 
@@ -17,12 +20,13 @@ public class OrderController {
     @GetMapping("/order/{orderId}")
     public OrderVO orderDetail(@PathVariable Long orderId) {
 
-        Product product = productFeignService.getDetail(1000002);
+        List<Product> products = new ArrayList<>();
+        products.add(productFeignService.getDetail(1000002));
+        products.add(productFeignService.getDetail(1000003));
 
         OrderVO orderVO = new OrderVO();
         orderVO.setOrderId(orderId);
-        orderVO.setProductId(product.getProductId());
-        orderVO.setProductName(product.getProductName());
+        orderVO.setProducts(products);
 
         return orderVO;
 

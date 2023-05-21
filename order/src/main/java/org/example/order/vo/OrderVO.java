@@ -1,6 +1,9 @@
 package org.example.order.vo;
 
 import lombok.Data;
+import org.example.common.entity.Product;
+
+import java.util.List;
 
 @Data
 public class OrderVO {
@@ -11,14 +14,8 @@ public class OrderVO {
     private Long orderId;
 
     /**
-     * 商品ID
+     * 商品列表
      */
-    private Integer productId;
-
-    /**
-     * 商品名称
-     */
-    private String productName;
-
+    private List<Product> products;
 
 }
