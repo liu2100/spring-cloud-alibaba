@@ -12,6 +12,7 @@
         <module>common</module>
         <module>order</module>
         <module>product</module>
+        <module>gateway</module>
     </modules>
 
     <properties>

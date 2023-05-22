@@ -1,4 +1,4 @@
-package org.example.product;
+package org.example.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,11 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author liudaojian
  */
 @SpringBootApplication
-public class ProductApplication {
+public class GatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProductApplication.class, args);
-        System.out.println("http://127.0.0.1:8101");
+        SpringApplication.run(GatewayApplication.class, args);
+        System.out.println("http://127.0.0.1:8080");
     }
 
 }
