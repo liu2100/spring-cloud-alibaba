@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ProductController implements ProductApi {
+public class ProductController {
 
+    @GetMapping("/product/{productId}")
     public Product getDetail(@PathVariable Integer productId) {
 
         Product product = new Product();

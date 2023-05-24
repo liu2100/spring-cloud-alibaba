@@ -6,9 +6,24 @@ spring:
     active: dev
   application:
     name: gateway-service
+  main:
+    web-application-type: reactive
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
         username: nacos
         password: nacos
+    gateway:
+      routes:
+        - id: order_route
+          uri: lb://order-service
+          predicates:
+            - Path=/order/**
+        - id: product_route
+          uri: lb://product-service
+          predicates:
+            - Path=/product/**
+
+logging:
+  config: classpath:logback-spring.xml

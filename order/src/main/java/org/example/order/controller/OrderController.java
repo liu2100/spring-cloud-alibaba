@@ -22,16 +22,16 @@ public class OrderController {
     private ProductFeignService productFeignService;
 
     @GetMapping("/order/{orderId}")
-    @SentinelResource(value = "order-detail", blockHandler = "orderDetailBlockHandler")
+    //@SentinelResource(value = "order-detail", blockHandler = "orderDetailBlockHandler")
     public Result<OrderVO> orderDetail(@PathVariable Long orderId) {
 
-        //List<Product> products = new ArrayList<>();
-        //products.add(productFeignService.getDetail(RandomUtil.randomInt(10000000, 20000000)));
-        //products.add(productFeignService.getDetail(RandomUtil.randomInt(10000000, 20000000)));
+        List<Product> products = new ArrayList<>();
+        products.add(productFeignService.getDetail(RandomUtil.randomInt(10000000, 20000000)));
+        products.add(productFeignService.getDetail(RandomUtil.randomInt(10000000, 20000000)));
 
         OrderVO orderVO = new OrderVO();
         orderVO.setOrderId(orderId);
-        //orderVO.setProducts(products);
+        orderVO.setProducts(products);
 
         return Result.success(orderVO);
 
